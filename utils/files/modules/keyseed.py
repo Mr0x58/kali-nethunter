@@ -767,34 +767,34 @@ def findinlist(byte, locale):
 	print '''echo -ne "\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''	
 	
 def wincmd(locale):
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	print '''echo -ne "\\x08\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
 	print '''echo -ne "\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	findinlist(str.encode("\x63"), locale) #c
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	findinlist(str.encode("\x6d"), locale) #m
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	findinlist(str.encode("\x64"), locale) #d
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	print '''echo -ne "\\x10\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
 	print '''echo -ne "\\x20\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	print '''echo -ne "\\x00\\x00\\x00\\x28\\x00\\x00\\x00\\x00" > /dev/hidg0'''
 	print '''echo -ne "\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
-	print '''sleep 3'''
+	#print '''sleep 3'''
 
 def win7cmd_elevated(locale):
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	print '''echo -ne "\\x08\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0''' #windows key
 	print '''echo -ne "\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	findinlist("\x63", locale) #c
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	findinlist("\x6d", locale) #m
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	findinlist("\x64", locale) #d
-	print '''sleep 1'''
+	#print '''sleep 1'''
     	print '''echo left-ctrl left-shift return | hid-keyboard /dev/hidg0 keyboard'''
         print '''sleep 3'''
 	if (locale=="us"): 
@@ -816,16 +816,16 @@ def win7cmd_elevated(locale):
 	print '''sleep 3'''
 
 def win8cmd_elevated(locale):
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	print '''echo -ne "\\x08\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
 	print '''echo -ne "\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	findinlist("\x63", locale) #c
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	findinlist("\x6d", locale) #m
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	findinlist("\x64", locale) #d
-	print '''sleep 1'''
+	#print '''sleep 1'''
 	print '''echo -ne "\\x10\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
 	print '''echo -ne "\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
 	print '''sleep 1'''
@@ -852,14 +852,7 @@ def win8cmd_elevated(locale):
 	print '''sleep 3'''
 
 def enterb():
-	print '''sleep 2'''
+	#print '''sleep 2'''
 	print '''echo -ne "\\x00\\x00\\x00\\x28\\x00\\x00\\x00\\x00" > /dev/hidg0'''
 	print '''echo -ne "\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00" > /dev/hidg0'''
-	print '''sleep 2'''
-
-#Unit tests
-#def main():
-#	win7cmd_elevated("fr")
-
-#if __name__ == "__main__":
-#    main()
+	#print '''sleep 2'''
